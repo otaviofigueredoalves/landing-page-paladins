@@ -9,10 +9,6 @@
 
 
 
-body {
-    height: 5000px;
-}
-
 :root {
     --main-white: #fff;
     --main-blue: #00526F;
@@ -32,13 +28,15 @@ body {
     justify-content: center;
     background-color: rgba(0,0,0,0,0.4);
     background-blend-mode: darken;
+    
 }
 #header-container:after{
     content: "";
     height: 97vh;
     width: 100%;
     position: absolute;
-    background: linear-gradient(to bottom, rgba(199, 241, 9, 0) 5%, rgba(27, 192, 41, 0) 5%, #1976f08f)
+    /* background: linear-gradient(to bottom, rgba(199, 241, 9, 0) 5%, rgba(27, 192, 41, 0) 5%, #1976f08f) */
+    background: rgba(0,0,0,0.5);
 }
 
 /* NAVBAR */
@@ -54,6 +52,8 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 20px 8%;
+    z-index: 10;
+
 }
 
 #navbar ul {
@@ -64,16 +64,20 @@ body {
     display: inline-block;
 }
 
-.menu {
+#menu {
     display: flex;
     gap: 100px;
 }
 
-#navbar a{
+#menu a{
     font-size: 1.2rem;
     text-decoration: none;
     color: var(--main-white);
     font-weight: 700;
+    /* background-color: red; */
+}
+#menu a:hover {
+    color: #27c2ff
 }
 /* HEADER SHOWCASE*/
 
@@ -159,11 +163,6 @@ body {
     text-shadow: 1px 1px 2px black;
 }
 
-#show-me {
-    margin: 20px 0;
-    color: var(--main-white)
-}
-
 .logo img {
     height: 70px;
 }
@@ -176,8 +175,54 @@ body {
     position: absolute;
     right: 0;
     bottom: 0;
-    z-index: -0.1;
+    z-index: -10;
 }
+
+/* ABOUT */
+
+#about {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--main-blue);
+    padding: 5% 5%;
+    font-family: var(--font-text);
+    /* background-color: green; */
+}
+#about-content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    /* background-color: red; */
+    color: var(--main-white);
+    
+}
+#about-text-content ul{
+    list-style-type: none;
+}
+
+#about-text-content h2{
+    margin-top: 50px;
+    font-size: 3rem;
+    
+}
+
+#about-content ul {
+    margin-left: 20px;
+}
+#about-content p, li {
+    font-size: 1.2rem;
+}
+
+#image-about img{
+    flex: 1;
+    max-width: 100%;
+    object-fit: cover;
+    max-height: 700px;
+}
+
 
 @media only screen and (max-width: 879px) {
     #navbar {
